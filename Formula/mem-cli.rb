@@ -10,9 +10,10 @@ class MemCli < Formula
   def install
     python = Formula["python@3.11"].opt_bin/"python3.11"
 
-    system python, "-m", "venv", libexec
-    system "#{libexec}/bin/pip", "install", "--upgrade", "pip"
-    system "#{libexec}/bin/pip", "install", buildpath
+    system "/bin/bash", "-c", "#{python} -m venv #{libexec}"
+    system "/bin/bash", "-c", "#{libexec}/bin/python -m ensurepip --upgrade"
+    system "/bin/bash", "-c", "#{libexec}/bin/python -m pip install --upgrade pip"
+    system "/bin/bash", "-c", "#{libexec}/bin/python -m pip install #{buildpath}"
 
     bin.install_symlink "#{libexec}/bin/mem"
   end
