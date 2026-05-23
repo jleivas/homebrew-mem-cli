@@ -1,21 +1,32 @@
 class MemCli < Formula
   desc "Local token observability and agent memory for Claude and Codex"
   homepage "https://github.com/jleivas/mem-cli"
-  url "https://github.com/jleivas/mem-cli/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "276f9f114e45802bd36620958cbd1737322a1130c882ebbf619646d2f209c806"
+  version "0.1.0"
   license "MIT"
 
-  depends_on "python@3.11"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.0/mem-darwin-arm64.tar.gz"
+      sha256 "PLACEHOLDER_DARWIN_ARM64"
+    else
+      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.0/mem-darwin-amd64.tar.gz"
+      sha256 "PLACEHOLDER_DARWIN_AMD64"
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm?
+      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.0/mem-linux-arm64.tar.gz"
+      sha256 "PLACEHOLDER_LINUX_ARM64"
+    else
+      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.0/mem-linux-amd64.tar.gz"
+      sha256 "PLACEHOLDER_LINUX_AMD64"
+    end
+  end
 
   def install
-    python = Formula["python@3.11"].opt_bin/"python3.11"
-
-    system "/bin/bash", "-c", "#{python} -m venv #{libexec}"
-    system "/bin/bash", "-c", "#{libexec}/bin/python -m ensurepip --upgrade"
-    system "/bin/bash", "-c", "#{libexec}/bin/python -m pip install --upgrade pip"
-    system "/bin/bash", "-c", "#{libexec}/bin/python -m pip install #{buildpath}"
-
-    bin.install_symlink "#{libexec}/bin/mem"
+    libexec.install Dir["*"]
+    bin.install_symlink libexec/"mem"
   end
 
   test do
