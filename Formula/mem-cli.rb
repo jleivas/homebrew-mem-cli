@@ -17,14 +17,8 @@ class MemCli < Formula
   end
 
   on_linux do
-    on_arm do
-      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.3/mem-linux-arm64.tar.gz"
-      sha256 "PLACEHOLDER_LINUX_ARM64"
-    end
-    on_intel do
-      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.3/mem-linux-amd64.tar.gz"
-      sha256 "PLACEHOLDER_LINUX_AMD64"
-    end
+    url "https://github.com/jleivas/mem-cli/releases/download/v0.1.3/mem-linux-amd64.tar.gz"
+    sha256 "PLACEHOLDER_LINUX_AMD64"
   end
 
   def install
