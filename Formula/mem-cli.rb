@@ -1,24 +1,24 @@
 class MemCli < Formula
   desc "Local token observability and agent memory for Claude and Codex"
   homepage "https://github.com/jleivas/mem-cli"
-  version "0.1.6"
+  version "0.1.7"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.6/mem-darwin-arm64.tar.gz"
-      sha256 "18989afa5fd99fd373efaddeb46573b23a035db2c7d15d0711caa39a559864af"
+      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.7/mem-darwin-arm64.tar.gz"
+      sha256 "1d3d9576f0583312df38059233e77e899b234175ccb87d68ed2b57fa3ee61b98"
     end
     on_intel do
-      url "https://github.com/jleivas/mem-cli/archive/refs/tags/v0.1.6.tar.gz"
-      sha256 "ba9282c2fcb12bbe48bdd5fcd33552b39d199cc3b4b29de7632af7e1f7c1d544"
+      url "https://github.com/jleivas/mem-cli/archive/refs/tags/v0.1.7.tar.gz"
+      sha256 "333e178595adef7f8902a606eb30234e728b6e38769dfc41947ca7528c783677"
       depends_on "python@3.11"
     end
   end
 
   on_linux do
-    url "https://github.com/jleivas/mem-cli/releases/download/v0.1.6/mem-linux-amd64.tar.gz"
-    sha256 "447c1537bdf3a7908f5b2233b97e7ac636370666fd26def35ae5e3f487f65252"
+    url "https://github.com/jleivas/mem-cli/releases/download/v0.1.7/mem-linux-amd64.tar.gz"
+    sha256 "19a0bd4b5ef9322a428d59f7deae77ad633b019ca5e69043c40a29a41a1c8f8a"
   end
 
   def install
