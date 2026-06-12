@@ -1,23 +1,23 @@
 class MemCli < Formula
   desc "Local token observability and agent memory for Claude and Codex"
   homepage "https://github.com/jleivas/mem-cli"
-  version "0.1.15"
+  version "0.1.16"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.15/mem-darwin-arm64.tar.gz"
-      sha256 "c8b5305a63f3dcc41d3531f9dbe023d53c248e1fc48effc495166b56a0477ff4"
+      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.16/mem-darwin-arm64.tar.gz"
+      sha256 "6df3408321e32ac618c2b34ffcde53b73d89dc0ce40ce66f98567771c330b6d8"
     end
     on_intel do
-      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.15/mem-darwin-amd64.tar.gz"
-      sha256 "5ea5772b603910ac846d0c8265de16d6894035dd17afe8ecebfc1db816008824"
+      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.16/mem-darwin-amd64.tar.gz"
+      sha256 "a2b1ad7082dc1183760fbfaf87c9d6915129d0f1df819280f0653f864053bc61"
     end
   end
 
   on_linux do
-    url "https://github.com/jleivas/mem-cli/releases/download/v0.1.15/mem-linux-amd64.tar.gz"
-    sha256 "60bf204c23a5e067b9ef71566a9f23052cc99bdcdb4632cad3c1ea74c153f41d"
+    url "https://github.com/jleivas/mem-cli/releases/download/v0.1.16/mem-linux-amd64.tar.gz"
+    sha256 "2f405475f1c1ea80b5ad8a8770b0137fea9864449e0f98ed1a1fcb4754f239c4"
   end
 
   def install
