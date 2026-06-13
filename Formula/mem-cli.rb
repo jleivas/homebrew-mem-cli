@@ -1,36 +1,28 @@
 class MemCli < Formula
   desc "Local token observability and agent memory for Claude and Codex"
   homepage "https://github.com/jleivas/mem-cli"
-  version "0.1.16"
+  version "0.1.17"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.16/mem-darwin-arm64.tar.gz"
-      sha256 "6df3408321e32ac618c2b34ffcde53b73d89dc0ce40ce66f98567771c330b6d8"
+      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.17/mem-darwin-arm64.tar.gz"
+      sha256 "ca2bef14781827d190e4b21fbbf940b89c8c47cd44bfc62541db964d885269cb"
     end
     on_intel do
-      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.16/mem-darwin-amd64.tar.gz"
-      sha256 "a2b1ad7082dc1183760fbfaf87c9d6915129d0f1df819280f0653f864053bc61"
+      url "https://github.com/jleivas/mem-cli/releases/download/v0.1.17/mem-darwin-amd64.tar.gz"
+      sha256 "62ce8fb894d8df4f29f68f14db4ea0d2c2f1d67341650879eb1381694861512c"
     end
   end
 
   on_linux do
-    url "https://github.com/jleivas/mem-cli/releases/download/v0.1.16/mem-linux-amd64.tar.gz"
-    sha256 "2f405475f1c1ea80b5ad8a8770b0137fea9864449e0f98ed1a1fcb4754f239c4"
+    url "https://github.com/jleivas/mem-cli/releases/download/v0.1.17/mem-linux-amd64.tar.gz"
+    sha256 "4f580bf7671d9765b12ff648f743f9cd52be8a142158a7e317f32f29939798cc"
   end
 
   def install
     libexec.install Dir["*"]
     bin.install_symlink libexec/"mem"
-  end
-
-  def caveats
-    <<~EOS
-      To fully uninstall (stops the MCP server, removes the Login Item, and
-      runs brew uninstall automatically):
-        mem uninstall
-    EOS
   end
 
   test do
