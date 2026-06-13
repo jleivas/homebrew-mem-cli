@@ -221,6 +221,14 @@ class MemCli < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      To fully uninstall (stops the MCP server, removes the Login Item, and
+      runs brew uninstall automatically):
+        mem uninstall
+    EOS
+  end
+
   test do
     ENV["MEM_HOME"] = testpath/".mem-cli"
     system bin/"mem", "--version"
